@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import luffyimg from "./assets/luffyy.jpg";
 import reactLogo from "./assets/react.svg";
-import IndexApp from "./components/index.jsx"; // Fixed import name to match component
+import IndexApp from "./components/index.jsx";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const person = {
