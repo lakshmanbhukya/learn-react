@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./App.css";
 import luffyimg from "./assets/luffyy.jpg";
+
 function MyButton() {
   return <button>Button</button>;
 }
@@ -44,7 +45,7 @@ function PlaceImge() {
     <img
       src={luffyimg}
       alt="luffy"
-      style={{ width: "400px", height: "250px",margin:"10px"}}
+      style={{ width: "400px", height: "250px", margin: "10px" }}
     />
   );
 }
@@ -77,7 +78,10 @@ If you render the same component multiple times, each will get its own state. Cl
       <MyButton count={count} onClick={countclick} />
       <MyButton count={count} onClick={countclick} />
       <div>
-        <div className="gallery">{PlaceImge()} {PlaceImge()}{PlaceImge()}</div>
+        <div className="gallery">
+          {PlaceImge()} {PlaceImge()}
+          {PlaceImge()}
+        </div>
       </div>
     </div>
   );
