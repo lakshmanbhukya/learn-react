@@ -3,6 +3,8 @@ import "./App.css";
 import luffyimg from "./assets/luffyy.jpg";
 import reactLogo from "./assets/react.svg";
 import IndexApp from "./components/index.jsx";
+import About from "./components/about.jsx";
+import Contact from "./components/contact.jsx"
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const person = {
@@ -122,8 +124,8 @@ export default function App() {
             }
           />
           <Route path="/indexpage" element={<IndexApp />} />
-          <Route path="/about" element={<div>About</div>} />
-          <Route path="/contact" element={<div>Contact</div>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/contact" element={<Contact/>} />
         </Routes>
       </div>
     </Router>
