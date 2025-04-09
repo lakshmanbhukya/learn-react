@@ -5,7 +5,7 @@ export default function About() {
     <>
       <h1>About Page </h1>
       <p>You are routed to About Page </p>
-      <p>thank you</p>
+      <h3>Thank you !! </h3>
     </>
   );
 }
