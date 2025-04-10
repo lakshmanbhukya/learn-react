@@ -2,13 +2,21 @@ import "./App.css";
 import IndexApp from "./components/index.jsx";
 import About from "./components/about.jsx";
 import Contact from "./components/contact.jsx";
+import Notfound from "./components/notfound-404.jsx";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 export default function App() {
   return (
     <Router>
       <div>
-        <nav style={{padding: 10,marginBottom: 20,textAlign:"center",backgroundColor:"#f4f6f6" }}>
+        <nav
+          style={{
+            padding: 10,
+            marginBottom: 20,
+            textAlign: "center",
+            backgroundColor: "#f4f6f6",
+          }}
+        >
           <Link to="/" style={{ marginRight: "10px" }}>
             Home
           </Link>
@@ -27,10 +35,13 @@ export default function App() {
           path="/"
           element={
             <div>
-              <h1 style={{fontSize:45,textAlign:"center"}}>Welcome to the Home Page!</h1>
+              <h1 style={{ fontSize: 45, textAlign: "center" }}>
+                Welcome to the Home Page!
+              </h1>
             </div>
           }
         />
+        <Route path="*" element={<Notfound />} />
         <Route path="/indexpage" element={<IndexApp />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
