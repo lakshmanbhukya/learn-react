@@ -1,7 +1,7 @@
 * {
   font-family: "Product Sans";
 }
-button{
+button {
   width: 100px;
   height: 50px;
   /* border-style: none; */
@@ -10,8 +10,17 @@ button{
   margin: 9px;
   transition: all 0.3s ease-in-out;
 }
-button:hover{
+button:hover {
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   border: 2px solid rgb(253, 252, 252);
+}
+input {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 20%;
+  font-size: 16px;
+  box-sizing: border-box;
 }
