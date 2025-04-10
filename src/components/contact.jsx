@@ -1,45 +1,82 @@
 import React, { useState } from "react";
-
+import "../css/contact.css";
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    age: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Hello ${name} Age ${age} email ${email}`);
+    console.log("Form Data Stored:", formData);
+    alert(`Hello ${formData.name}! Your form is stored successfully.`);
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit} align="center">
-        <label htmlFor="name">name :</label>
+      <h2>Contact Form</h2>
+      <form onSubmit={handleSubmit}>
         <input
+          name="name"
           type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        /> <br/><br/>
-        <label htmlFor="age">age :</label>
+          placeholder="Name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+        <br />
         <input
+          name="age"
           type="number"
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
-        /><br/><br/>
-        <label htmlFor="email">email :</label>
+          placeholder="Age"
+          value={formData.age}
+          onChange={handleChange}
+        />
+        <br />
         <input
+          name="email"
           type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        /><br/>
-        <label htmlFor="password">password :</label>
+          placeholder="Email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+        <br />
         <input
+          name="password"
           type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        /><br/>
-        <button type="submit">Greet !!</button>
+          placeholder="Password"
+          value={formData.password}
+          onChange={handleChange}
+        />{" "}
+        <br />
+        <button type="submit">Submit</button>
       </form>
+
+      <div style={{ marginTop: "20px" }}>
+        <h4>Stored Data:</h4>
+        <p>
+          <strong>Name:</strong> {formData.name}
+        </p>
+        <p>
+          <strong>Age:</strong> {formData.age}
+        </p>
+        <p>
+          <strong>Email:</strong> {formData.email}
+        </p>
+        <p>
+          <strong>Password:</strong> {formData.password}
+        </p>
+      </div>
     </>
   );
 }
