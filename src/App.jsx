@@ -3,6 +3,7 @@ import IndexApp from "./components/index.jsx";
 import About from "./components/about.jsx";
 import Contact from "./components/contact.jsx";
 import Notfound from "./components/notfound-404.jsx";
+import Sendmail from "./components/sendMsg.jsx";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 export default function App() {
@@ -26,7 +27,8 @@ export default function App() {
           <Link to="/about" style={{ marginRight: "10px" }}>
             About
           </Link>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact" style={{ marginRight: "10px" }}>Contact</Link> 
+          <Link to="/sendmail">sendmail</Link>
         </nav>
       </div>
 
@@ -45,6 +47,7 @@ export default function App() {
         <Route path="/indexpage" element={<IndexApp />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/sendmail" element={<Sendmail />} />
       </Routes>
     </Router>
   );

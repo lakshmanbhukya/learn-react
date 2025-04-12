@@ -1,0 +1,10 @@
+select {
+  width: 30%;
+  color: black;
+
+  height: 40px;
+  margin-top: 10px;
+}
+textarea {
+  margin-top: 10px;
+}
