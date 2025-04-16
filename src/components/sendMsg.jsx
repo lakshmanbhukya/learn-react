@@ -1,5 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/sendmail.css";
+
+// Move Counter outside Sendmail
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log("count updated");
+  }, [count]);
+
+  return (
+    <>
+      <h1>{count}</h1>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </>
+  );
+}
 
 export default function Sendmail() {
   const [from, setFrom] = useState("lakshman");
@@ -17,7 +33,7 @@ export default function Sendmail() {
     <div>
       <h1>Send a msg</h1>
       <form onSubmit={handleMessage}>
-        <label htmlFor="to">From:</label>
+        <label htmlFor="from">From:</label>
         <select value={from} onChange={(e) => setFrom(e.target.value)}>
           <option value="lakshman">lakshman</option>
           <option value="luffy">luffy</option>
@@ -46,6 +62,9 @@ export default function Sendmail() {
 
         <button type="submit">Send Message</button>
       </form>
+
+      <h1>useEffect</h1>
+      <Counter />
     </div>
   );
 }
