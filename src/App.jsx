@@ -38,7 +38,10 @@ export default function App() {
             Learn React
           </h1>
           <div className="flex space-x-4">
-            <Link to="/" className="hover:text-blue-400 hover:text- transition">
+            <Link
+              to="/"
+              className="hover:text-blue-400 hover:underline transition"
+            >
               Home
             </Link>
             <Link to="/login" className="hover:text-blue-400 transition">
